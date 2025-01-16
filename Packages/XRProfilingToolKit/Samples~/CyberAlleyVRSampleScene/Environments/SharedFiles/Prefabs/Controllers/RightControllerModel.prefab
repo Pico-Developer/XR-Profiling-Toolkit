@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &588274493876933136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2281696399307846454}
+  - component: {fileID: 8151791578876099827}
+  m_Layer: 0
+  m_Name: RightControllerModel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2281696399307846454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588274493876933136}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8151791578876099827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588274493876933136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ba2bcdb414e3b47aca41fdc1a87e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: 1
+  neo3L: {fileID: 7118676274473289238, guid: cdfa7bcd7bb254b9c9eb48bc58439e47, type: 3}
+  neo3R: {fileID: 8449525692238721171, guid: 82831bec8918543d19cdfdd90802e535, type: 3}
+  PICO_4L: {fileID: 3222469904833361626, guid: 487ac9a2c6e532c4eb123f49311595b1, type: 3}
+  PICO_4R: {fileID: 1704171135803129665, guid: ec1389a5846274089a3ba9471b6a0831, type: 3}
+  G3: {fileID: 3592357975929350142, guid: 4632f3d33fc5ea94e8a7673306cbb3e2, type: 3}
+  PICO_4U_L: {fileID: 5160734707760153619, guid: 918aae51462f5924499b98f9e468bad2,
+    type: 3}
+  PICO_4U_R: {fileID: 2641197622611298662, guid: 037b3a3af16ec6940a9e76e074eac1d2,
+    type: 3}
+  legacyMaterial: {fileID: 2100000, guid: ea5d1bb890cef78439598b7062576fa3, type: 2}
+  controllerSimulation: 4

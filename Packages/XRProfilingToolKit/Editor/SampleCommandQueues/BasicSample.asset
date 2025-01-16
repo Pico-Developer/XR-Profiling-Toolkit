@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb2dad21060a06a478b568f5bc9ce173, type: 3}
+  m_Name: BasicSample
+  m_EditorClassIdentifier: 
+  id: BasicSample-0.0.1
+  stopTime: -1
+  commands:
+  - rid: 7206374328493670493
+  - rid: 7206374328493670491
+  - rid: 7206374328493670494
+  - rid: 7206374328493670495
+  - rid: 7206374328493670496
+  - rid: 7206374328493670497
+  - rid: 7206374328493670498
+  - rid: 7206374328493670499
+  references:
+    version: 2
+    RefIds:
+    - rid: 7206374328493670491
+      type: {class: CommandScreenCapture, ns: DeveloperTech.XRProfilingToolkit.Automation,
+        asm: XRProfilingToolkit}
+      data:
+        type: 0
+        context: Start
+        useUnityScreenCapture: 0
+    - rid: 7206374328493670493
+      type: {class: CommandWait, ns: DeveloperTech.XRProfilingToolkit.Automation,
+        asm: XRProfilingToolkit}
+      data:
+        durationInSec: 1
+    - rid: 7206374328493670494
+      type: {class: CommandMove, ns: DeveloperTech.XRProfilingToolkit.Automation,
+        asm: XRProfilingToolkit}
+      data:
+        x: 0
+        y: 0
+        z: 0
+        speed: 0.5
+    - rid: 7206374328493670495
+      type: {class: CommandScreenCapture, ns: DeveloperTech.XRProfilingToolkit.Automation,
+        asm: XRProfilingToolkit}
+      data:
+        type: 0
+        context: Position0
+        useUnityScreenCapture: 0
+    - rid: 7206374328493670496
+      type: {class: CommandMove, ns: DeveloperTech.XRProfilingToolkit.Automation,
+        asm: XRProfilingToolkit}
+      data:
+        x: 1
+        y: 0
+        z: 1
+        speed: 0.5
+    - rid: 7206374328493670497
+      type: {class: CommandScreenCapture, ns: DeveloperTech.XRProfilingToolkit.Automation,
+        asm: XRProfilingToolkit}
+      data:
+        type: 0
+        context: Position1
+        useUnityScreenCapture: 0
+    - rid: 7206374328493670498
+      type: {class: CommandMove, ns: DeveloperTech.XRProfilingToolkit.Automation,
+        asm: XRProfilingToolkit}
+      data:
+        x: 1
+        y: 0
+        z: -1
+        speed: 0.5
+    - rid: 7206374328493670499
+      type: {class: CommandScreenCapture, ns: DeveloperTech.XRProfilingToolkit.Automation,
+        asm: XRProfilingToolkit}
+      data:
+        type: 0
+        context: Position2
+        useUnityScreenCapture: 0

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fbdf8c7925005647bb75a26c02d7dcb, type: 3}
+  m_Name: XRFeatureSettings
+  m_EditorClassIdentifier: 
+  _incompatibleFeatures: []
+  _foveationLevel: 1
+  _MSAASamples: 4
+  _featureStatusInManualMode:
+  - feature: 0
+    isOn: 1
+  - feature: 1
+    isOn: 1
+  _enableFixedResolutuon: 0
+  _targetResolution: {x: 1504, y: 1504}
+  _performanceLevel: 3
+  _adaptiveResolutionPowerSetting: 0

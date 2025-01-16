@@ -1,0 +1,138 @@
+{
+  "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandQueue, XRProfilingToolkit",
+  "id": "CyberAlleySample-0.0.1",
+  "stopTime": -1.0,
+  "commands": {
+    "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandBase[], XRProfilingToolkit",
+    "$values": [
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 0,
+        "enabled": true
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 1,
+        "enabled": true
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 2,
+        "enabled": false
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandLoadLevel, XRProfilingToolkit",
+        "levelIndex": 0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandWait, XRProfilingToolkit",
+        "durationInSec": 2.0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandSetDynamicMode, Assembly-CSharp",
+        "mode": 0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandWait, XRProfilingToolkit",
+        "durationInSec": 2.0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "Effect=None"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 0,
+        "enabled": false
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "Effect=None"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 1,
+        "enabled": false
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "Effect=None"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandWait, XRProfilingToolkit",
+        "durationInSec": 2.0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandSetDynamicMode, Assembly-CSharp",
+        "mode": 1
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandWait, XRProfilingToolkit",
+        "durationInSec": 2.0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "Effect=Particle"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 1,
+        "enabled": true
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "Effect=Particle"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 0,
+        "enabled": true
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "Effect=Particle"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandSetDynamicMode, Assembly-CSharp",
+        "mode": 2
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandWait, XRProfilingToolkit",
+        "durationInSec": 2.0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "Effect=VFX"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 1,
+        "enabled": false
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "Effect=VFX"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 0,
+        "enabled": false
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "Effect=VFX"
+      }
+    ]
+  },
+  "name": "CyberAlleySample",
+  "hideFlags": 0
+}

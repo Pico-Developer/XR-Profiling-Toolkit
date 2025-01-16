@@ -1,0 +1,169 @@
+{
+  "key_val_separator": "=",
+  "metric_splitter":  ",",
+  "line_splitter": "\n",
+  "metrics": [
+    {
+      "enabled": 1,
+      "name": "FPS",
+      "template": "{fps.value:d}/{fps.maxValue:d}"
+    },
+    {
+      "enabled": 1,
+      "name": "Prd",
+      "template": "{mtp.value:d}{mtp.unit:w}",
+      "description": "Motion to photo latency"
+    },
+    {
+      "enabled": 0,
+      "name": "Tear",
+      "template": "{tear.value:d}"
+    },
+    {
+      "enabled": 0,
+      "name": "Early",
+      "template": "{early.value:d}"
+    },
+    {
+      "enabled": 0,
+      "name": "Stale",
+      "template": "{stale.value:d}"
+    },
+    {
+      "enabled": 0,
+      "name": "Stale2/5/10/max",
+      "template": "{s2.value:d}/{s5.value:d}/{s10.value:d}/{smax.value:d}"
+    },
+    {
+      "enabled": 0,
+      "name": "VSnc",
+      "template": "{vsync.value:d}"
+    },
+    {
+      "enabled": 0,
+      "name": "Lat",
+      "template": "{extra_latency_mode.value:d}"
+    },
+    {
+      "enabled": 1,
+      "name": "FOV",
+      "template": "{foveation.value:d}",
+      "description": "Foveation level"
+    },
+    {
+      "enabled": 0,
+      "name": "CPU4/GPU",
+      "template": "{cpu_level.value:d}/{gpu_level.value:d},{hw_hz.cpu.value:d}/{hw_hz.gpu.value:d}{hw_hz.gpu.unit:w}"
+    },
+    {
+      "enabled": 0,
+      "name": "OC",
+      "template": "{online_core_mask.value:x}"
+    },
+    {
+      "enabled": 0,
+      "name": "TA",
+      "template": "{tw_thread.value:d}/{main_thread.value:d}/{render_thread.value:d}"
+    },
+    {
+      "enabled": 0,
+      "name": "SP",
+      "template": "{tw_priority.stringValue:l}/{main_priority.stringValue:l}/{render_priority.stringValue:l}"
+    },
+    {
+      "enabled": 0,
+      "name": "mMem",
+      "template": "{mem_freq.value:d}{mem_freq.unit:w}"
+    },
+    {
+      "enabled": 0,
+      "name": "Free",
+      "template": "{free_mem.value:d}{free_mem.unit:w}"
+    },
+    {
+      "enabled": 0,
+      "name": "PLS",
+      "template": "{power_level.value:d}"
+    },
+    {
+      "enabled": 0,
+      "name": "Temp",
+      "template": "{battery_temp.value:f}{battery_temp.unit:w}/{sensor_temp.value:f}{sensor_temp.unit:w}"
+    },
+    {
+      "enabled": 1,
+      "name": "TW",
+      "template": "{compositor_gpu_time.value:f}{compositor_gpu_time.unit:w}",
+      "description": "Compositor GPU time"
+    },
+    {
+      "enabled": 1,
+      "name": "App",
+      "template": "{FrameTime.GPU.value:f}{FrameTime.GPU.unit:w}",
+      "description": "App GPU time, this is ahead of CPU&GPU render time"
+    },
+    {
+      "enabled": 0,
+      "name": "GD",
+      "template": "{guardian_gpu_time.value:f}{guardian_gpu_time.unit:w}"
+    },
+    {
+      "enabled": 1,
+      "name": "CPU&GPU",
+      "template": "{FrameTime.Total.value:f}{FrameTime.Total.unit:w}",
+      "description": "Total render time, substract by app gpu time for render thread time"
+    },
+    {
+      "enabled": 0,
+      "name": "LCnt",
+      "template": "{layer_count.value:d}({layer_count_s1.stringValue:w},{layer_count_s2.stringValue:w})"
+    },
+    {
+      "enabled": 1,
+      "name": "GPU%",
+      "template": "{gpu_util.value:f}",
+      "description": "GPU Utilization"
+    },
+    {
+      "enabled": 1,
+      "name": "CPU%",
+      "template": "{cpu_util.avg.value:f}(W{cpu_util.worst.value:f})"
+    },
+    {
+      "enabled": 0,
+      "name": "DSF",
+      "template": "{dsf.value:f}"
+    },
+    {
+      "enabled": 0,
+      "name": "CFL",
+      "template": "{cfl_num.value:f}/{cfl_den.value:f}"
+    },
+    {
+      "enabled": 0,
+      "name": "ICFLp95",
+      "template": "{cfl_p95.value:f}"
+    },
+    {
+      "enabled": 0,
+      "name": "LD",
+      "template": "{ld.value:d}"
+    },
+    {
+      "enabled": 0,
+      "name": "SF",
+      "template": "{sf.value:f}"
+    },
+    {
+      "enabled": 0,
+      "name": "LP",
+      "template": "{lp.value:d}"
+    },
+    {
+      "enabled": 0,
+      "name": "DVFS",
+      "template": "{dvfs.value:d}"
+    }
+  ],
+  "reference":"https://developer.oculus.com/blog/ovr-metrics-tool-vrapi-what-do-these-metrics-mean/"
+}

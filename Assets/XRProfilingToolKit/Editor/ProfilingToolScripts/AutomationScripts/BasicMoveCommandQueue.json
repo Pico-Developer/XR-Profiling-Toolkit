@@ -1,0 +1,57 @@
+{
+  "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandQueue, XRProfilingToolkit",
+  "id": "BasicSample-0.0.1",
+  "stopTime": -1.0,
+  "commands": {
+    "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandBase[], XRProfilingToolkit",
+    "$values": [
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandWait, XRProfilingToolkit",
+        "durationInSec": 1.0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "Start"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandMove, XRProfilingToolkit",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "speed": 0.5
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "Position0"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandMove, XRProfilingToolkit",
+        "x": 1.0,
+        "y": 0.0,
+        "z": 1.0,
+        "speed": 0.5
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "Position1"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandMove, XRProfilingToolkit",
+        "x": 1.0,
+        "y": 0.0,
+        "z": -1.0,
+        "speed": 0.5
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "Position2"
+      }
+    ]
+  },
+  "name": "BasicSample",
+  "hideFlags": 0
+}

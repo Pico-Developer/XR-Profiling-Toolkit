@@ -1,0 +1,83 @@
+{
+  "key_val_separator": "=",
+  "metric_splitter":  ",",
+  "line_splitter": "\n",
+  "metrics": [
+    {
+      "enabled": 1,
+      "name": "FPS",
+      "template": "{fps.value:d}/{fps.maxValue:d}"
+    },
+    {
+      "enabled": 1,
+      "name": "MTP",
+      "template": "{mtp.value:f}{mtp.unit:w}"
+    },
+    {
+      "enabled": 0,
+      "name": "AppSW",
+      "template": "{AppSW.status:w}"
+    },
+    {
+      "enabled": 0,
+      "name": "FrmEarly",
+      "template": "{FrameEarly.value:d}"
+    },
+    {
+      "enabled": 0,
+      "name": "FrmLate",
+      "template": "{FrameLate.value:d}"
+    },
+    {
+      "enabled": 1,
+      "name": "FrmCpu",
+      "template": "{FrameTime.CPU.value:f}{FrameTime.CPU.unit:w}"
+    },
+    {
+      "enabled": 1,
+      "name": "FrmGpu",
+      "template": "{FrameTime.GPU.value:f}{FrameTime.GPU.unit:w}",
+      "description": "App GPU frame time"
+    },
+    {
+      "enabled": 0,
+      "name": "FrmTime",
+      "template": "{FrameTime.Total.value:f}{FrameTime.Total.unit:w}"
+    },
+    {
+      "enabled": 1,
+      "name": "ATWGPU",
+      "template": "{compositor_gpu_time.value:f}{compositor_gpu_time.unit:w}"
+    },
+    {
+      "enabled": 0,
+      "name": "VsyncDelay",
+      "template": "{VsyncDelay.value:d}"
+    },
+    {
+      "enabled": 1,
+      "name": "GPU",
+      "template": "{gpu_util.value:%}/{gpu_util.maxValue:d}{gpu_util.maxValueUnit:w}"
+    },
+    {
+      "enabled": 0,
+      "name": "GPUTemp",
+      "template": "{GPUTemp.value:f}{GPUTemp.unit:w}"
+    },
+    {
+      "enabled": 0,
+      "name": "LayerCnt",
+      "template": "{LayerCnt.value:d}"
+    },
+    {
+      "enabled": 0,
+      "name": "Pkg",
+      "template": "{PackageName.stringValue:package_name}"
+    },
+    {
+      "enabled": 0,
+      "name": "FrmId",
+      "template": "{FrameId.value:d}"
+    }
+  ]
+}

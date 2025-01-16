@@ -1,0 +1,37 @@
+{
+  "name": "com.pico.xr.profiling.toolkit",
+  "displayName": "XR Profiling Toolkit",
+  "version": "1.0.0",
+  "description": "The XR Profiling Toolkit package is an automated and customizable graphics profiling tool for evaluating the performance of XR applications running on headset devices. The core framework of the toolkit involves automated test scripting, graphics feature toggling, profiling data export, and report generation for in-depth performance analysis and comparison. You can easily integrate this tool into your existing XR projects or explore its capabilities and usages in the sample scene by importing from the Samples.",
+  "unity": "2022.3",
+  "unityRelease": "23f1",
+  "author": {
+    "name": "bytedance, Inc.",
+    "url": "https://developer.picoxr.com/"
+  },
+  "licensesUrl": "",
+  "licenseMessage": "",
+  "keywords": [
+    "XR",
+    "Oculus",
+    "Quest",
+    "PICO",
+    "Meta"
+  ],
+  "samples": [
+    {
+      "displayName": "Cyber Alley Sample Scene",
+      "description": "A high-quality sample scene to demonstrate the capabilities and usages of the XR Profiling Toolkit.",
+      "path": "Samples~/CyberAlleyVRSampleScene"
+    }
+  ],
+  "documentationUrl": "https://developer.picoxr.com/zh/document/unity/pico-graphics-probe-tool/",
+  "changelogUrl": "https://developer.picoxr.com/",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.unity.render-pipelines.universal": "12.1.10",
+    "com.unity.xr.interaction.toolkit": "2.5.2",
+    "com.unity.xr.management": "4.4.0",
+    "com.unity.visualeffectgraph": "12.1.10"
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "XRProfilingToolkit",
+    "rootNamespace": "",
+    "references": [
+        "Unity.XR.Interaction.Toolkit",
+        "Unity.InputSystem",
+        "Unity.XR.Management",
+        "Unity.XR.CoreUtils",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.RenderPipelines.Core.Runtime",
+        "UnityEngine.SpatialTracking",
+        "Unity.XR.PICO",
+        "Oculus.VR"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,290 @@
+{
+    "key_val_separator": ":",
+    "metric_splitter":  "\n",
+    "line_splitter": "\n\n",
+    "reference":"https://developer-global.pico-interactive.com/document/unity/pico-graphics-probe-tool/",
+    "metrics": [
+      {
+        "enabled": 0,
+        "name": "Clocks / Second",
+        "description": "Total number of GPU clocks consumed by all system processes (time unit: seconds).",
+        "template": "{clocks_per_second.value:f}"
+      },
+      {
+        "enabled": 1,
+        "name": "GPU % Bus Busy",
+        "description": "Approximate percentage of GPU busy on the system memory bus.",
+        "template": "{gpu_bus_busy_percentage.value:f}"
+      },
+      {
+        "enabled": 1,
+        "name": "% Vertex Fetch Stall",
+        "description": "Percentage of clock cycles where the GPU cannot make any more requests for vertex data.",
+        "template": "{vertex_fetch_stall_percentage.value:f}"
+      },
+      {
+        "enabled": 1,
+        "name": "% Texture Fetch Stall",
+        "description": "Percentage of clock cycles where the shader processors cannot make any more requests for texture data.",
+        "template": "{texture_fetch_stall_percentage.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "L1 Texture Cache Miss Per Pixel",
+        "description": "Average number of Texture L1 cache misses per pixel.",
+        "template": "{l1_texture_cache_miss_per_pixel.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "% Texture L2 Miss",
+        "description": "Percentage of L2 texture cache misses. Formula: Number of L2 texture cache misses / L2 texture cache requests.",
+        "template": "{texture_l2_miss_percentage.value:f}"
+      },
+      {
+        "enabled": 1,
+        "name": "% Stalled on System Memory",
+        "description": "Percentage of draw call cycles the L2 cache is stalled while waiting for data from system memory.",
+        "template": "{stalled_on_system_memory_percentage.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Pre-clipped Polygons/Second",
+        "description": "Number of polygons submitted to the GPU before any hardware clipping.",
+        "template": "{pre_clipped_polygons_per_second.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "% Prims Trivially Rejected",
+        "description": "Percentage of primitives that are trivially rejected.",
+        "template": "{primitives_trivially_rejected_percentage.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "% Prims Clipped",
+        "description": "Percentage of primitives clipped by the GPU, where new primitives are generated.",
+        "template": "{primitives_clipped_percentage.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Average Vertices / Polygon",
+        "description": "Average number of vertices per polygon.",
+        "template": "{average_vertices_per_polygon.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Reused Vertices / Second",
+        "description": "Number of vertices used from the post-transform vertex buffer cache.",
+        "template": "{reused_vertices_per_second.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Average Polygon Area",
+        "description": "Average number of pixels per polygon.",
+        "template": "{average_polygon_area.value:f}"
+      },
+      {
+        "enabled": 1,
+        "name": "% Shaders Busy",
+        "description": "Percentage of time that all shader cores are busy.",
+        "template": "{shaders_busy_percentage.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Vertices Shaded / Second",
+        "description": "Number of vertices submitted to the shader engine.",
+        "template": "{vertices_shaded_per_second.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Fragments Shaded / Second",
+        "description": "Number of fragments submitted to the shader engine.",
+        "template": "{fragments_shaded_per_second.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Vertex Instructions / Second",
+        "description": "Total number of scalar vertex shader instructions issued.",
+        "template": "{vertex_instructions_per_second.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Fragment Instructions / Second",
+        "description": "Total number of fragment shader instructions issued.",
+        "template": "{fragment_instructions_per_second.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Fragment ALU Instructions / Sec (Full)",
+        "description": "Total number of full precision fragment shader instructions issued.",
+        "template": "{fragment_alu_instructions_full_per_second.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Fragment ALU Instructions / Sec (Half)",
+        "description": "Total number of half precision scalar fragment shader instructions issued.",
+        "template": "{fragment_alu_instructions_half_per_second.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Fragment EFU Instructions / Second",
+        "description": "Total number of scalar fragment shader Elementary Function Unit (EFU) instructions issued, including math functions like sin, cos, pow, and more.",
+        "template": "{fragment_efu_instructions_per_second.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Textures / Vertex",
+        "description": "Average number of textures referenced per vertex.",
+        "template": "{textures_per_vertex.value:f}"
+      },
+      {
+        "enabled": 1,
+        "name": "Textures / Fragment",
+        "description": "Average number of textures referenced per fragment.",
+        "template": "{textures_per_fragment.value:f}"
+      },
+      {
+        "enabled": 1,
+        "name": "ALU / Vertex",
+        "description": "Average number of vertex scalar shader ALU instructions issued per shaded vertex.",
+        "template": "{alu_per_vertex.value:f}"
+      },
+      {
+        "enabled": 1,
+        "name": "ALU / Fragment",
+        "description": "Average number of scalar fragment shader ALU instructions issued per shaded fragment.",
+        "template": "{alu_per_fragment.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "EFU / Fragment",
+        "description": "Average number of scalar fragment shader EFU instructions issued per shaded fragment. Does not include Vertex EFU instructions.",
+        "template": "{efu_per_fragment.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "EFU / Vertex",
+        "description": "Average number of scalar vertex shader EFU instructions issued per shaded vertex. Does not include fragment EFU instructions.",
+        "template": "{efu_per_vertex.value:f}"
+      },
+      {
+        "enabled": 1,
+        "name": "% Time Shading Fragments",
+        "description": "Percentage of time spent shading fragments. Formula: Time spent on shading fragments / Total time spent on shading.",
+        "template": "{time_shading_fragments_percentage.value:f}"
+      },
+      {
+        "enabled": 1,
+        "name": "% Time Shading Vertices",
+        "description": "Percentage of time spent shading vertices. Formula: Time spent on shading vertices / Total time spent on vertices.",
+        "template": "{time_shading_vertices_percentage.value:f}"
+      },
+      {
+        "enabled": 1,
+        "name": "% Time Compute",
+        "description": "Percentage of time spent in compute work. Formula: time spent in compute work / the total time spent shading everything.",
+        "template": "{time_compute_percentage.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "% Shader ALU Capacity Utilized",
+        "description": "Percent of maximum shader capacity (ALU operations) utilized. For each cycle that the shaders are working, the average percentage of the total shader ALU capacity that is utilized for that cycle.",
+        "template": "{shader_alu_capacity_utilized_percentage.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "% Time ALUs Working",
+        "description": "Percentage of time the ALUs are working while the shaders are busy. Formula: ALU working time / Shader working time.",
+        "template": "{time_alus_working_percentage.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "% Time EFUs Working",
+        "description": "Percentage of time the EFUs are working while the shaders are busy. Formula: EFU working time / Shader working time.",
+        "template": "{time_efus_working_percentage.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "% Nearest Filtered",
+        "description": "Percentage of texels filtered using the nearest sampling method.",
+        "template": "{nearest_filtered_percentage.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "% Linear Filtered",
+        "description": "Percentage of texels filtered using the linear sampling method.",
+        "template": "{linear_filtered_percentage.value:f}"
+      },
+      {
+        "enabled": 1,
+        "name": "% Anisotropic Filtered",
+        "description": "Percentage of texels filtered using the anisotropic sampling method.",
+        "template": "{anisotropic_filtered_percentage.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "% Non-Base Level Textures",
+        "description": "Percentage of texels coming from a non-base MIP level.",
+        "template": "{non_base_level_textures_percentage.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Read Total (Bytes/sec)",
+        "description": "Total number of bytes read by the GPU from memory.",
+        "template": "{read_total_bytes_per_second.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Write Total (Bytes/sec)",
+        "description": "Total number of bytes written by the GPU to memory.",
+        "template": "{write_total_bytes_per_second.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Texture Memory Read BW (Bytes/Second)",
+        "description": "Bytes of texture data read from memory.",
+        "template": "{texture_memory_read_bandwidth_bytes_per_second.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Vertex Memory Read (Bytes/Second)",
+        "description": "Bytes of vertex data read from memory.",
+        "template": "{vertex_memory_read_bytes_per_second.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "SP Memory Read (Bytes/Second)",
+        "description": "Bytes of data read from memory by the shader processors.",
+        "template": "{sp_memory_read_bytes_per_second.value:f}"
+      },
+      {
+        "enabled": 1,
+        "name": "Avg Bytes / Fragment",
+        "description": "Average texture data read from memory per fragment (in bytes). Formula: Total number of texture bytes read from memory / Total number of fragments.",
+        "template": "{avg_bytes_per_fragment.value:f}"
+      },
+      {
+        "enabled": 1,
+        "name": "Avg Bytes / Vertex",
+        "description": "Average vertex data read from memory per vertex (in bytes). Formula: Total number of vertex bytes read from memory / Total number of vertices.",
+        "template": "{avg_bytes_per_vertex.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Preemptions / second",
+        "description": "Number of GPU preemptions that occurred.",
+        "template": "{preemptions_per_second.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "Avg Preemption Delay",
+        "description": "Average duration of GPU preemption, which is the average time from the preemption request to preemption start.",
+        "template": "{avg_preemption_delay.value:f}"
+      },
+      {
+        "enabled": 0,
+        "name": "GPU Frequency",
+        "description": "GPU frequency.",
+        "template": "{gpu_frequency.value:f}"
+      }
+    ]
+  }

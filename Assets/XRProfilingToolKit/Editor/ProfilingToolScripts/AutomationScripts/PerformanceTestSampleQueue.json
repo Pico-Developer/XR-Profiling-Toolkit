@@ -1,0 +1,62 @@
+{
+  "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandQueue, XRProfilingToolkit",
+  "id": "PerformanceTestSample-0.0.1",
+  "stopTime": -1.0,
+  "commands": {
+    "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandBase[], XRProfilingToolkit",
+    "$values": [
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 0,
+        "enabled": false
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 1,
+        "enabled": false
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "Start"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 0,
+        "enabled": true
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "FFR=On"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 1,
+        "enabled": true
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "MSAA=On"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 0,
+        "enabled": false
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "MSAA=Off"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 4,
+        "context": "End"
+      }
+    ]
+  },
+  "name": "PerformanceTestSample",
+  "hideFlags": 0
+}
