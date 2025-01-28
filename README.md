@@ -275,9 +275,12 @@ Below is a table detailing the Unity Editor Menu of the toolkit and the descript
 
 We would like to thank the following members and their contributions.
 
-Product Design and Management: Ke Jing, Jane Tian
-Graphics and Software Engineering: Xutong Zhou
-Unity Engineering: Xiangrui Meng
-Data Visualization: Fukang Hong
-QA and Testing: Lang Li
-Art: PICO Design Center
+| Name  | Role |
+| ------------- | ------------- |
+| Ke Jing | Product Design and Management |
+| Xutong Zhou | Graphics and Software Engineering |
+| Xiangrui Meng | Unity Engineering |
+| Fukang Hong | Data Visualization |
+| Lang Li | QA and Testing |
+| Jane Tian | Project Management |
+| PICO Design Center | Art |
