@@ -151,19 +151,20 @@ The following basic commands are supported by default for any test scene:
   3. CommandWait: wait for a certain period before the next command.
     1. DurationInSec (float): seconds to wait
   4. CommandScreenCapture: capture screenshot, screen record, rendering stage, or draw call.
+
 This works with the Python script. The command prints out an adb log with the Python script monitoring logcat. When the screen capture log is printed, the Python script calls the corresponding service to capture it.
-    1. Type (enum): type of capture
-      1. Including CaptureScreen, StartScreenRecord, EndScreenRecord, CaptureRenderingStage, CaptureDrawCall. The last two options capture detailed GPU metrics and are only recommended if you know how to read them.
-    2. Context (string): context of the capture
-      1. This can be any metadata associated with the capture. Captures with the same context will be grouped together in the report.
-  The following basic commands are supported in conjunction with components in any scene:
+    1. Type (enum): type of capture, including CaptureScreen, StartScreenRecord, EndScreenRecord, CaptureRenderingStage, CaptureDrawCall. The last two options capture detailed GPU metrics and are only recommended if you know how to read them.
+    2. Context (string): context of the capture. This can be any metadata associated with the capture. Captures with the same context will be grouped together in the report.
+
+The following basic commands are supported in conjunction with components in any scene:
   1. CommandLoadLevel: load a specific level with the SceneLoader.prefab, you can find it at **XR Profiling ToolKit->Shortcuts**
     1. Level Index (int): which level to load, starting from 0. 0 indicates the 1st profiling scene.
   2. CommandToggleFeature: toggle the scene features with the FeatureManager.prefab, you can find it at **XR Profiling ToolKit->Shortcuts**
     1. Feature (enum):
       1. includes the following rendering features: FFR (fixed foveated rendering, Med Level), MSAA (4x), Dynamic Resolution (Meta) or Adaptive Resolution (PICO).
     2. Enabled (bool): turn on or off the feature
-  The following examples of expandable commands are supported in the Cyber Alley scene according to their specific logic. You can try to expand your own commands on your own project:
+
+The following examples of expandable commands are supported in the Cyber Alley scene according to their specific logic. You can try to expand your own commands on your own project:
   1. CommandSetDynamicMode: set the dynamic mode of the scene. Scene 1 has a dynamic particle system
     1. Mode (int): mode of dynamic system. 
       1. In Scene 1 (Cyber Alley), 0: no effect, 1: using particle system, 2 - using vfx graph
@@ -247,7 +248,8 @@ For the comparison report, the report differs in the following ways.
 - Since two sessions may run on different devices, device specs of individual sessions are displayed side by side.
 - If the same metric data is available from both sessions, they will be plotted on the same graph. The session average of both sessions will be displayed on the tab.
 - Screen captures will be displayed side by side only if they share the same context and rendering feature status.
-4. Porting XR Profiling Toolkit to Another Project
+
+## 4. Porting XR Profiling Toolkit to Another Project
 To port the XR Profiling Toolkit to other Unity projects, follow these minimal steps:
 1. Import the XRProfilingToolKit package by Window->Package Manager-> Add package from disk.
 2. Go to the Unity editor menu, click and run XR Profiling ToolKit->Shortcuts->Validate Provider Plugin (Meta\PICO):
@@ -273,7 +275,7 @@ Below is a table detailing the Unity Editor Menu of the toolkit and the descript
 
 ## 6. Credits
 
-We would like to thank the following members and their contributions.
+We would like to thank the following members and their contributions on this project.
 
 | Name  | Role |
 | ------------- | ------------- |
