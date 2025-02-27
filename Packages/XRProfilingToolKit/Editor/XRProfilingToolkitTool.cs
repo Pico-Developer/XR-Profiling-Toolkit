@@ -25,7 +25,7 @@ namespace XRProfilingToolkit.Editor
     /// </summary>
     public class XRProfilingToolkitEditorMenu : EditorWindow
     {
-        [MenuItem("XR Profiling ToolKit/Shortcuts/Validate Provider Plugin (Meta\\PICO)")]
+        [MenuItem("Tools/XR Profiling ToolKit/Shortcuts/Validate Provider Plugin (Meta\\PICO)")]
         private static void CheckXRPlugin()
         {
             string currentMacros = PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
@@ -93,7 +93,7 @@ namespace XRProfilingToolkit.Editor
         private static string _prefabPackagePath;
         private static GameObject _prefabToCheck;
         
-        [MenuItem("XR Profiling ToolKit/Shortcuts/Add CommandRunner To Scene")]
+        [MenuItem("Tools/XR Profiling ToolKit/Shortcuts/Add CommandRunner To Scene")]
         static void AddCommandRunnerToScene()
         {
             _prefabPackagePath = "Packages/com.pico.xr.profiling.toolkit/Resources/CommandRunner.prefab";
@@ -111,7 +111,7 @@ namespace XRProfilingToolkit.Editor
             }
         }
         
-        [MenuItem("XR Profiling ToolKit/Shortcuts/Add SceneLoader To Scene")]
+        [MenuItem("Tools/XR Profiling ToolKit/Shortcuts/Add SceneLoader To Scene")]
         static void AddSceneLoaderToScene()
         {
             _prefabPackagePath = "Packages/com.pico.xr.profiling.toolkit/Resources/SceneLoader.prefab";
@@ -129,7 +129,7 @@ namespace XRProfilingToolkit.Editor
             }
         }
         
-        [MenuItem("XR Profiling ToolKit/Shortcuts/Add FeatureManager To Scene")]
+        [MenuItem("Tools/XR Profiling ToolKit/Shortcuts/Add FeatureManager To Scene")]
         static void AddFeatureManagerToScene()
         {
             _prefabPackagePath = "Packages/com.pico.xr.profiling.toolkit/Resources/FeatureBaseManager.prefab";
@@ -148,7 +148,7 @@ namespace XRProfilingToolkit.Editor
         }
         
         
-        [MenuItem("XR Profiling ToolKit/Shortcuts/Copy ProfilingToolScripts folder To Assets")]
+        [MenuItem("Tools/XR Profiling ToolKit/Shortcuts/Copy ProfilingToolScripts folder To Assets")]
         static void CopyScriptFolderToAssets()
         {
             CopyPackageFolder();
@@ -266,7 +266,7 @@ namespace XRProfilingToolkit.Editor
             scriptDirectionPath = Application.dataPath+"/XRProfilingToolKit/Editor/ProfilingToolScripts/";
             scriptPackageDirectionPath = UnityEditor.PackageManager.PackageInfo.FindForAssetPath("Packages/com.pico.xr.profiling.toolkit").resolvedPath+"/Editor/ProfilingToolScripts/";
         }
-        [MenuItem("XR Profiling ToolKit/Device Profiling Tool Window")]
+        [MenuItem("Tools/XR Profiling ToolKit/Device Profiling Tool Window")]
         public static void ShowWindow()
         {
             GetWindow<DeviceProfilingWindow>("Device Profiling Tool Window");

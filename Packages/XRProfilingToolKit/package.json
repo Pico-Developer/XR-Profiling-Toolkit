@@ -29,9 +29,11 @@
   "changelogUrl": "https://developer.picoxr.com/",
   "dependencies": {
     "com.unity.nuget.newtonsoft-json": "3.2.1",
-    "com.unity.render-pipelines.universal": "12.1.10",
+    "com.unity.render-pipelines.universal": "14.0.10",
     "com.unity.xr.interaction.toolkit": "2.5.2",
     "com.unity.xr.management": "4.4.0",
-    "com.unity.visualeffectgraph": "12.1.10"
+    "com.unity.visualeffectgraph": "14.0.10",
+    "com.unity.modules.screencapture": "1.0.0",
+    "com.unity.modules.unitywebrequest": "1.0.0"
   }
 }
