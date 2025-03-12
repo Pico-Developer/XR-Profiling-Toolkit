@@ -17,7 +17,7 @@ namespace DeveloperTech.XRProfilingToolkit
     /// </summary>
     public static class XRProfilingToolkitLogger
     {
-        private const string _logTag = "XRProfilingToolkit";
+        private const string _logTag = "XR_ProfilingToolkit";
 
         /// <summary>
         /// Types of XR profiling log
