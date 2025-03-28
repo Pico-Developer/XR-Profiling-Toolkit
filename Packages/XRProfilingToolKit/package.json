@@ -22,7 +22,7 @@
     {
       "displayName": "Demo Sample Scenes",
       "description": "Two high-quality sample scenes to demonstrate the capabilities and usages of the XR Profiling Toolkit.",
-      "path": "Samples~/DemoSampleScenes"
+      "path": "Samples~/Demo Sample Scenes"
     }
   ],
   "documentationUrl": "https://developer.picoxr.com/zh/document/unity/pico-graphics-probe-tool/",
