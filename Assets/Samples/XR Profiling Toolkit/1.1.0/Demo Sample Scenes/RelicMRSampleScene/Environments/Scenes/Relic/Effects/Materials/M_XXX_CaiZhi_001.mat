@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_XXX_CaiZhi_001
+  m_Shader: {fileID: 4800000, guid: a3847f7868bddef4d96cabe1203020a6, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _ROTATE90_ON
+  - _UV2_DISSOLUTION_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Bump:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolutionTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Dissovle:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 82591600d4bb14141a1dfeb174889e3e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Niuqu:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpCustom: 0
+    - _BumpPower: 0
+    - _BumpSwitch: 0
+    - _BumpU_speed: 0
+    - _BumpV_speed: 0
+    - _CullMode: 0
+    - _Depthoffset: 0
+    - _DissCustom: 0
+    - _DissU_Speed: 0
+    - _DissV_Speed: 0
+    - _Dissolute: 1
+    - _DissolveRange: 1
+    - _Dst: 1
+    - _FADE_Y: 0
+    - _InvFade: 1
+    - _MaskU_Speed: 0
+    - _MaskV_Speed: 0
+    - _NiuquPower: 0
+    - _NiuquU_Speed: 0
+    - _NiuquV_Speed: 0
+    - _Power: 2
+    - _R: 0
+    - _Rotate90: 1
+    - _SoftDissPower: 0.6
+    - _SoftDissolve: 0
+    - _Soft_Power: 0.5
+    - _Src: 1
+    - _UV2_dissolution: 1
+    - _U_Speed: 0
+    - _V_Speed: 0
+    - _VertexNormal: 0
+    - _ZTestMode: 4
+    - _ZWriteMode: 0
+    - _fadePosY: 0
+    - _power: 1
+    m_Colors:
+    - _BumpVector: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _MainColor: {r: 4, g: 4, b: 4, a: 1}
+    - _TintColor: {r: 1, g: 1, b: 1, a: 1}
+    - _UV_Speed: {r: 0.2, g: 0.2, b: 0, a: 0}
+  m_BuildTextureStacks: []

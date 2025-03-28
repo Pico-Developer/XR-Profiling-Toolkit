@@ -1,0 +1,147 @@
+{
+  "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandQueue, XRProfilingToolkit",
+  "id": "RelicSample-0.0.2",
+  "stopTime": -1.0,
+  "commands": {
+    "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandBase[], XRProfilingToolkit",
+    "$values": [
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 1,
+        "enabled": false
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 2,
+        "enabled": false
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandLoadLevel, XRProfilingToolkit",
+        "levelIndex": 1
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandWait, XRProfilingToolkit",
+        "durationInSec": 2.0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandWaitForSceneCapture, Assembly-CSharp"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "MSAA=OFF,AdaptiveResolution=OFF"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandWait, XRProfilingToolkit",
+        "durationInSec": 1.0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 1,
+        "enabled": true
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "MSAA=ON,AdaptiveResolution=OFF"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandWait, XRProfilingToolkit",
+        "durationInSec": 1.0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 2,
+        "enabled": true
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "MSAA=ON,AdaptiveResolution=ON"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandWait, XRProfilingToolkit",
+        "durationInSec": 1.0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 1,
+        "enabled": false
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "MSAA=OFF,AdaptiveResolution=ON"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandWait, XRProfilingToolkit",
+        "durationInSec": 1.0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandToggleFeature, XRProfilingToolkit",
+        "feature": 1,
+        "enabled": true
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandSetLODLevel, Assembly-CSharp",
+        "level": 0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "LOD=0"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandWait, XRProfilingToolkit",
+        "durationInSec": 1.0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandSetLODLevel, Assembly-CSharp",
+        "level": 1
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "LOD=1"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandWait, XRProfilingToolkit",
+        "durationInSec": 1.0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandSetLODLevel, Assembly-CSharp",
+        "level": 2
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "LOD=2"
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandWait, XRProfilingToolkit",
+        "durationInSec": 1.0
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandCreateSpaceItem, Assembly-CSharp",
+        "positionX": 0.0,
+        "positionY": 1.5,
+        "positionZ": 1.0,
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0,
+        "itemId": 2
+      },
+      {
+        "$type": "DeveloperTech.XRProfilingToolkit.Automation.CommandScreenCapture, XRProfilingToolkit",
+        "type": 0,
+        "context": "CreateItem"
+      }
+    ]
+  },
+  "name": "RelicSample",
+  "hideFlags": 0
+}

@@ -39,7 +39,7 @@ Open Source Software Licensed Under Other License:
 2. DoTween v1.2.745
      Copyright (c) 2014 Daniele Giardini - Demigiant
 
-3. XR Interaction Toolkit 2.5.2
+3. XR Interaction Toolkit 3.0.3
      XR Interaction Toolkit copyright © 2023 Unity Technologies
 
 Terms of the Unity Companion License:

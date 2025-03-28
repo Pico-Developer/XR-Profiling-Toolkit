@@ -47,7 +47,7 @@ namespace DeveloperTech.XRProfilingToolkit.Automation
             if (useUnityScreenCapture && type == CaptureType.CaptureScreen)
             {
                 XRProfilingToolkitLogger.Log($"{GetType().Name} Capturing screen with Unity service: {context}");
-                ScreenCapture.CaptureScreenshot($"{SceneManager.GetActiveScene().name}_{context}_{DateTime.Now.ToString("yyyyMMddHHmmssfff")}");
+                UnityEngine.ScreenCapture.CaptureScreenshot($"{SceneManager.GetActiveScene().name}_{context}_{DateTime.Now.ToString("yyyyMMddHHmmssfff")}");
             }
             else
             {

@@ -84,8 +84,8 @@ namespace DeveloperTech.XRProfilingToolkit
             else if (XRGeneralSettings.Instance.Manager.activeLoaders.Count == 0)
             {
 #if UNITY_EDITOR
-                Platform = PlatformType.Pico;
-                //Platform = PlatformType.Quest;
+                //Platform = PlatformType.Pico;
+                Platform = PlatformType.Quest;
 #else
                 Debug.LogError("Please use at least one XR Plugin to run XRProfilingToolkit!");
 #endif
@@ -146,7 +146,7 @@ namespace DeveloperTech.XRProfilingToolkit
         {
             ConfigurePicoRelatedObjects();
             ConfigureOculusRelatedObjects();
-            var controllerConfigurator = FindObjectOfType<ActionBasedControllerConfigurator>(true);
+            var controllerConfigurator = FindObjectOfType<ControllerConfigurator>(true);
             if (controllerConfigurator != null)
                 controllerConfigurator.ConfigureController(Platform);
         }

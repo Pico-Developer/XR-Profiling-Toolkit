@@ -212,14 +212,12 @@ namespace DeveloperTech.XRProfilingToolkit
                     maxEyeTextureScale = PXR_Manager.Instance.maxEyeTextureScale;
                 }
 #endif
-                // TODO (xutong.zhou): rely on PXR_Manager/OVRManager on setting eye texture scale
                 if (GraphicsSettings.currentRenderPipeline is UniversalRenderPipelineAsset urpPipelineAsset)
                     urpPipelineAsset.renderScale = maxEyeTextureScale;
                 XRSettings.eyeTextureResolutionScale = maxEyeTextureScale;
             }
             else
             {
-                // TODO (xutong.zhou): rely on PXR_Manager/OVRManager on setting eye texture scale
                 XRSettings.eyeTextureResolutionScale = _xrFeatureSettings.EyeTextureScale;
                 XRSettings.renderViewportScale = 1.0f;
 

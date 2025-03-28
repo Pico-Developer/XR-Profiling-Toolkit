@@ -257,7 +257,7 @@ To port the XR Profiling Toolkit to other Unity projects, follow these minimal s
 3. Add the CommandRunner.prefab to the Scene by clicking Add CommandRunner To Scene button:
   - In the scene where you want to run the profiling, create an empty GameObject and attach the CommandRunner.cs script.
 4. Set up Command Queue:
-  - Follow the Automated Test section to create a command queue in your Unity project. Note that only a limited set of commands is supported, as some commands have dependencies on other systems. However, you can create new command types that suit your projectâ€™s needs by using the existing commands as a reference. See more details in 3.1.2.
+  - Follow the Automated Test section to create a command queue in your Unity project. Note that only a limited set of commands is supported, as some commands have dependencies on other systems. However, you can create new command types that suit your project¡¯s needs by using the existing commands as a reference. See more details in 3.1.2.
 5. Build and deploy the project:
   - Build and deploy your Unity project to install the apk file on your device. Then, you can follow the Automated Test section to run a profiling session and generate performance reports.
 

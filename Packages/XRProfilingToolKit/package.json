@@ -1,7 +1,7 @@
 {
   "name": "com.pico.xr.profiling.toolkit",
   "displayName": "XR Profiling Toolkit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "The XR Profiling Toolkit package is an automated and customizable graphics profiling tool for evaluating the performance of XR applications running on headset devices. The core framework of the toolkit involves automated test scripting, graphics feature toggling, profiling data export, and report generation for in-depth performance analysis and comparison. You can easily integrate this tool into your existing XR projects or explore its capabilities and usages in the sample scene by importing from the Samples.",
   "unity": "2022.3",
   "unityRelease": "23f1",
@@ -20,9 +20,9 @@
   ],
   "samples": [
     {
-      "displayName": "Cyber Alley Sample Scene",
-      "description": "A high-quality sample scene to demonstrate the capabilities and usages of the XR Profiling Toolkit.",
-      "path": "Samples~/CyberAlleyVRSampleScene"
+      "displayName": "Demo Sample Scenes",
+      "description": "Two high-quality sample scenes to demonstrate the capabilities and usages of the XR Profiling Toolkit.",
+      "path": "Samples~/DemoSampleScenes"
     }
   ],
   "documentationUrl": "https://developer.picoxr.com/zh/document/unity/pico-graphics-probe-tool/",

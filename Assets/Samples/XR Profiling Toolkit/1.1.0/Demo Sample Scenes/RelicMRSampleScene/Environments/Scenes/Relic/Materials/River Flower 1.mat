@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: River Flower 1
+  m_Shader: {fileID: 4800000, guid: a3b7ea69ba96d7e4a83f86d89b20713c, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _USEWAVE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: ed512d00c2b0c0748bcb5cf3fce1a4c8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0.1}
+    - _CausticsTex:
+        m_Texture: {fileID: 2800000, guid: 581fcfd543a4445829bb923bace720da, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0.1}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SurfaceDistortion:
+        m_Texture: {fileID: 2800000, guid: 8450e01b421163c4499eab44a7676a2d, type: 3}
+        m_Scale: {x: 25, y: 12}
+        m_Offset: {x: 0, y: 0.05}
+    - _SurfaceNoise:
+        m_Texture: {fileID: 2800000, guid: b9c5043f13ce8284e8072c5a99d13dd4, type: 3}
+        m_Scale: {x: 3, y: 3}
+        m_Offset: {x: 0.01, y: 0.03}
+    m_Ints: []
+    m_Floats:
+    - _BumpScale: 0.5
+    - _CausticsDistortionScale: 0.00394
+    - _CausticsScale: 0.005
+    - _DepthMaxDistance: 0.03
+    - _DistanceDensity: 0.8
+    - _DunesDistance: 1
+    - _FoamMaxDistance: 0.005
+    - _FresnelDensity: 14.76
+    - _GlobalScale: 8.47
+    - _Gloss: 117
+    - _HeightScale: 0.0001
+    - _IntervalDistance: 0
+    - _MaxDistance: 5
+    - _MaxShadowDistance: 5
+    - _NormalDistortionScale: 0.1
+    - _P: 0
+    - _SurfaceDistortionScale: 0.65
+    - _SurfaceNoiseCutoff: 1
+    - _UseWave: 1
+    - _Wave1Amplitude: 0.75
+    - _Wave1Direction: 0.5
+    - _Wave1Speed: 1.5
+    - _Wave1Wavelength: 20
+    - _Wave2Amplitude: 1
+    - _Wave2Direction: 0.2
+    - _Wave2Speed: 2
+    - _Wave2Wavelength: 15
+    - _WaveSpeed: 1
+    - _Xm: 0.00657
+    m_Colors:
+    - _CausticsColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DepthDeepColor: {r: 0.12968232, g: 0.38894767, b: 0.49685526, a: 0.7254902}
+    - _DepthShallowColor: {r: 0.28956515, g: 0.7081913, b: 0.7610062, a: 0.74509805}
+    - _FoamColor: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
+    - _ShadowColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Specular: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

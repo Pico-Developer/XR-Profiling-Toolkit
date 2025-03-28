@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Samples/XR Profiling Toolkit/1.0.0/Cyber Alley Sample Scene/Scenes/MainMenu.unity
+    path: Assets/Samples/XR Profiling Toolkit/1.1.0/Demo Sample Scenes/CyberAlleyVRSampleScene/Scenes/MainMenu.unity
     guid: 6cae6cb5060714ab998ca1cc49f6000e
   - enabled: 1
-    path: Assets/Samples/XR Profiling Toolkit/1.0.0/Cyber Alley Sample Scene/Scenes/CyberAlley.unity
+    path: Assets/Samples/XR Profiling Toolkit/1.1.0/Demo Sample Scenes/CyberAlleyVRSampleScene/Scenes/CyberAlley.unity
     guid: c1673e200fd837445813cc09d8c99ef3
+  - enabled: 1
+    path: Assets/Samples/XR Profiling Toolkit/1.1.0/Demo Sample Scenes/RelicMRSampleScene/Scenes/Relic.unity
+    guid: 26c7459be41c408459a292522b263125
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 095926145de4ac34a9142667a7b7b1a6,
       type: 2}

@@ -57,26 +57,32 @@ fDeviceSpec = None
 
 json_persistent_path = f"/storage/emulated/0/Android/data/{app_id}/files/CommandQueue.json"
 #functions
+def get_device_time():
+    return subprocess.check_output(["adb", "shell", "date", "+%Y%m%d%H%M%S%N"], text=True).strip()
+
 def check_devices():
-    out = subprocess.check_output(['adb', 'devices'], text = True).splitlines()
-    devices = []
-    for line in out[1:]:
-        if not line.strip():
-            continue
-        if 'offline' in line:
-            continue
-        
-        return True
-    return False
+    try:
+        out = subprocess.check_output(['adb', 'devices'], text=True).splitlines()
+        for line in out[1:]:
+            if line.strip() and 'offline' not in line:
+                return True
+        return False
+    except subprocess.CalledProcessError:
+        return False
+
 
 def check_platform():
-    out = subprocess.check_output(["adb", "shell", "getprop", "ro.product.system.brand"], text = True)
-    if ('oculus' in out):
-        return Platform.Quest
-    elif ("Pico" in out):
-        return Platform.Pico
-    else:
+    try:
+        out = subprocess.check_output(["adb", "shell", "getprop", "ro.product.odm.brand"], text=True)
+        if 'oculus' in out:
+            return Platform.Quest
+        elif "Pico" in out:
+            return Platform.Pico
+        else:
+            return Platform.Unknown
+    except subprocess.CalledProcessError:
         return Platform.Unknown
+
     
 def create_dir():
     global pxr_screencap_dir, session_dir, screencap_dir, gprobe_dir, gprobe_realtime_mode
@@ -88,15 +94,13 @@ def create_dir():
     os.makedirs(session_dir)
 
     scripts_dir = os.path.dirname(os.path.abspath(__file__))
-    source_file_path = os.path.join(scripts_dir, "pxr_metrics.schema")
-    destination_file_path = os.path.join(session_dir, "pxr_metrics.schema")
-    shutil.copy(source_file_path, destination_file_path)
-    source_file_path = os.path.join(scripts_dir, "ovr_metrics.schema")
-    destination_file_path = os.path.join(session_dir, "ovr_metrics.schema")
-    shutil.copy(source_file_path, destination_file_path)
-    source_file_path = os.path.join(scripts_dir, "pil_output.schema")
-    destination_file_path = os.path.join(session_dir, "pil_output.schema")
-    shutil.copy(source_file_path, destination_file_path)
+    schema_files = ["pxr_metrics.schema", "ovr_metrics.schema", "pil_output.schema"]
+    for schema_file in schema_files:
+        source_file_path = os.path.join(scripts_dir, schema_file)
+        destination_file_path = os.path.join(session_dir, schema_file)
+        shutil.copy(source_file_path, destination_file_path)
+    
+
     source_file_path = os.path.join(scripts_dir, "report_template")
     destination_file_path = os.path.join(session_dir, "report_template")
     shutil.copytree(source_file_path, destination_file_path, dirs_exist_ok=True)
@@ -109,9 +113,8 @@ def create_dir():
         pxr_screencap_dir = f"/sdcard/Pictures/Screenshots/{session_id}"
 
         try:
-            output = subprocess.check_output(["adb", "shell", "ls", pxr_screencap_parent_dir], text = True)
+            subprocess.check_output(["adb", "shell", "ls", pxr_screencap_parent_dir], text = True)
         except subprocess.CalledProcessError as exec:
-            # create the screenshots directory if not exists. The directory will be created at first screen capture
             subprocess.call(["adb", "shell", "mkdir", pxr_screencap_parent_dir])
         subprocess.call(["adb","shell", "mkdir", pxr_screencap_dir])
     else:
@@ -133,16 +136,18 @@ def start_profilingtoolkit():
         pGprobe = start_gprobe_realtime(1)
 
 def stop_profilingtoolkit():
-    pXRProfilingToolkitLog.terminate()
+    if pXRProfilingToolkitLog:
+        pXRProfilingToolkitLog.terminate()
     time.sleep(2)
     pull_screencaps()
     if pGprobe is not None:
         pGprobe.terminate()
-    pMetrics.terminate()
+    if pMetrics:
+        pMetrics.terminate()
 
 # pico screencap service require root access
 def cap_screen(context):
-    cur_time = subprocess.check_output(["adb", "shell", "date", "+%Y%m%d%H%M%S%N"], text=True).strip()
+    cur_time = get_device_time()
     screen_cap_path = f"{pxr_screencap_dir}/{scene_name}_{context}_{feature_status}_{cur_time}.png"
     if False:
         subprocess.call(["adb", "shell", "am", "startservice", "-p", "com.bytedance.pico.screencapture", "-a", "pvr.intent.action.SCREEN_SHOT", "--es", "from", "test", "--es", "file_path", screen_cap_path, "--eia", "resolution", f"{screen_cap_w},{screen_cap_h}"])
@@ -152,7 +157,7 @@ def cap_screen(context):
 # pico screencap service require root access
 def start_screen_record():
     if (current_platform is Platform.Pico):
-        pxr_time = subprocess.check_output(["adb", "shell", "date", "+%Y%m%d%H%M%S%N"], text=True).strip()
+        pxr_time = get_device_time()
         screen_rc_path = f"{pxr_screencap_dir}/{scene_name}_{pxr_time}.mp4"
         subprocess.call(['adb', 'shell', 'am', 'startservice', '-p', 'com.bytedance.pico.screencapture', '-a', 'pvr.intent.action.SCREEN_RECORD', '--es', 'pvr.intent.action.SCREEN_RECORD', 'COMMAND_START', '--es', 'from', 'xxx', '--es', 'file_path', screen_rc_path])
     else:
@@ -166,10 +171,14 @@ def stop_screen_record():
         print(f"Screen capture not supported on {current_platform}")
 
 def pull_screencaps():
-    print(f"adb pull {pxr_screencap_dir} {screencap_dir}")
-    subprocess.check_output(["adb", "pull", pxr_screencap_dir, screencap_dir])
-    # clean up the screencap dir on device
-    subprocess.call(["adb", "shell", "rm", "-r", pxr_screencap_dir])
+    try:
+        print(f"adb pull {pxr_screencap_dir} {screencap_dir}")
+        subprocess.check_output(["adb", "pull", pxr_screencap_dir, screencap_dir])
+        # clean up the screencap dir on device
+        subprocess.call(["adb", "shell", "rm", "-r", pxr_screencap_dir])
+    except subprocess.CalledProcessError as e:
+        print(f"Failed to pull screencaps: {e}")
+
 
 def update_feature_status(line):
     global feature_status
@@ -184,7 +193,8 @@ def update_feature_status(line):
 def update_scene_name(line):
     global scene_name
     scene_name = line.split(":")[-1].strip()
-    scene_name.replace("", "_")
+    scene_name = scene_name.replace(" ", "_")
+
 
 def process_line(line):
     global hFov, vFov
@@ -209,7 +219,8 @@ def process_line(line):
     if "$DeviceSpec" in line:
         deviceSpecStr = line.split('$DeviceSpec')[-1].strip()
         # write device spec to file
-        fDeviceSpec.write(deviceSpecStr + '\n')
+        if fDeviceSpec:
+            fDeviceSpec.write(deviceSpecStr + '\n')
         # record device fov to calculate PPD later
         if "FOV" in deviceSpecStr:
             fovs = re.findall(r"[-+]?(?:\d*\.*\d+)", deviceSpecStr)
@@ -218,7 +229,8 @@ def process_line(line):
 
 def start_pxr_metrics():
     global current_platform
-    fMetrics = open(os.path.join(session_dir, "ovr_metrics.log" if current_platform is Platform.Quest else "pxr_metrics.log"), "w")
+    log_file = os.path.join(session_dir, "ovr_metrics.log" if current_platform is Platform.Quest else "pxr_metrics.log")
+    fMetrics = open(log_file, "w")
     metric_command = "VrApi" if (current_platform == Platform.Quest) else "PxrMetric"
     p = subprocess.Popen(["adb", "logcat", f"{metric_command}:V", "*:S"], stdout=fMetrics, universal_newlines=True, text = True)
     return p
@@ -229,10 +241,14 @@ def gprobe_stage(context):
         print("GPU Profiler in realtime mode, unable to capture rendering stage!")
         return
     
-    pxr_time = subprocess.check_output(["adb", "shell", "date", "+%Y%m%d%H%M%S%N"], text=True).strip()
+    pxr_time = get_device_time()
     outputPath = f"{gprobe_dir}/stage_{scene_name}_{context}_{feature_status}_{pxr_time}.log"
-    fDrawcall = open(outputPath, "w")
-    subprocess.call(["adb", "shell", gpu_profiler, "-t"], stdout=fDrawcall, universal_newlines=True, text = True)
+    try:
+        fDrawcall = open(outputPath, "w")
+        subprocess.call(["adb", "shell", gpu_profiler, "-t"], stdout=fDrawcall, universal_newlines=True, text=True)
+        fDrawcall.close()
+    except Exception as e:
+        print(f"Failed to capture rendering stage: {e}")
 
 def gprobe_drawcall(context):
     global gprobe_dir, gprobe_realtime_mode
@@ -240,13 +256,17 @@ def gprobe_drawcall(context):
         print("GPU Profiler in realtime mode, unable to capture drawcall!")
         return
     
-    pxr_time = subprocess.check_output(["adb", "shell", "date", "+%Y%m%d%H%M%S%N"], text=True).strip()
+    pxr_time = get_device_time()
     outputPath = f"{gprobe_dir}/drawcall_{scene_name}_{context}_{feature_status}_{pxr_time}.log"
-    fStage = open(outputPath, "w")
-    subprocess.call(["adb", "shell", gpu_profiler, "-x", "--time", "0.2"], stdout=fStage, universal_newlines=True, text = True)
+    try:
+        fStage = open(outputPath, "w")
+        subprocess.call(["adb", "shell", gpu_profiler, "-x", "--time", "0.2"], stdout=fStage, universal_newlines=True, text=True)
+        fStage.close()
+    except Exception as e:
+        print(f"Failed to capture drawcall: {e}")
     
 def start_gprobe_realtime(freq):
-    adb_time = subprocess.check_output(["adb", "shell", "date", "+%Y%m%d%H%M%S%N"], text=True).strip()
+    adb_time = get_device_time()
     fGpuInfo = open(os.path.join(session_dir, "pil_output.log"), "w")
     fGpuInfo.write(f"{adb_time}\n")
     command = ["adb", "shell", gpu_profiler, "-r"]
@@ -305,6 +325,16 @@ def lock_cpu_level():
     if current_platform == Platform.Quest:
         subprocess.call(['adb', 'shell', 'setprop', 'debug.oculus.cpuLevel' '3'])
 
+def get_foreground_activity():
+    try:
+        output = subprocess.check_output(["adb", "shell", "dumpsys", "activity", "recents", "|", "grep", "mFocusedActivity"], text=True)
+        match = re.search(r"mFocusedActivity.*\{.* ([^/]+/[^}]+)\}", output)
+        if match:
+            return match.group(1)
+        return None
+    except subprocess.CalledProcessError:
+        return None
+        
 # main
 parser.add_argument('--file', type=str, help="Automation commands file for profilingtoolkiting")
 parser.add_argument('--outputPath', type=str, help="Analysis session output path")
@@ -337,7 +367,6 @@ if args.file:
 
 # TODO(xutong): make this configurable
 gprobe_realtime_mode = True
-
 # if (not gprobe_realtime_mode):
 subprocess.call(["adb", "shell", gpu_profiler, "-e"])
 
@@ -346,7 +375,6 @@ time.sleep(1)
 print("Starting xrprofiling app: " + app_main_activity)
 p = subprocess.Popen(["adb", "shell", "am", "start", "-n", app_main_activity], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 p.wait()
-
 if (current_platform == Platform.Pico):
     # Pico only, oculus don't need to select process
     subprocess.check_output(["adb", "shell", "gprobe", "-s", app_id], text = True)
@@ -356,14 +384,11 @@ if stderr:
     print("Failed to start profilingtoolkit app...")
     print(stderr)
     exit()
-
 session_id = "xr_profiling_session_" + datetime.datetime.now().strftime('%Y%m%d%H%M%S')
 create_dir()
-
 pXRProfilingToolkitLog = subprocess.Popen(["adb", "logcat", "Unity:V", "*:S"], stdout=subprocess.PIPE)
 fDeviceSpec = open(os.path.join(session_dir, "device_spec.log"), "w")
 log_os_version()
-
 fXRProfilingToolkitLog = open(os.path.join(session_dir, "xr_profilingtoolkit.log"), "w")
 while True:
     if pXRProfilingToolkitLog.poll() is None:
@@ -376,7 +401,6 @@ while True:
     else:
         print("break")
         break
-
 if args.file:
     # remove the automation file pushed to the device
     subprocess.call(["adb", "shell", "rm", json_persistent_path])
