@@ -22,16 +22,16 @@ https://github.com/user-attachments/assets/eeebc885-5dc0-44f5-9ac3-2e6100760c74
 
 ## 1. Setup
 ### 1.1 Supported Devices
-- PICO 4 series, with PICO 4 Ultra support coming in the first half of 2025
+- PICO 4 series, with PICO 4 Ultra support coming in 2025
 - PICO Neo 3 series
 - Meta Quest 3
 - Meta Quest 2
 
 ### 1.2 Development Environment
-- PICO SDK version: 3.0.4 
+- PICO SDK version: 3.1.2
   - included in the project and imported from the downloaded file
   - Note that there may be conflicting guids with other providers when you import the PICO SDK from the git url. This is a known issue and will be fixed in a future update.
-- Meta XR All-in-One SDK version: 69.0.1
+- Meta XR All-in-One SDK version: 74.0.0
   - Included in the project and installed via the Unity Package Manager
 - Unity version: 2022.3.23f1 LTS
 - Graphics API: Vulkan
@@ -71,7 +71,7 @@ Use the controller to select a sample scene in the main menu interface. Only the
 
 ![image (1)](https://github.com/user-attachments/assets/a012fcf9-6c73-47b0-8ee4-73a324549f68)
 
-### 2.2. Cyber Alley VR Sample Scene
+### 2.2. VR Sample Scene - Cyber Alley
 The Cyber Alley scene is a showcase scene that evaluates the performance of a well-made VR scene. It features various graphics enhancement features, a dynamic particle system, and performance evaluation and debugging tools. On PICO 4, it runs consistently at 72 frames per second (FPS), which is the default maximum FPS. In the project settings, we lock it to be 72 FPS for performance reasons, such as protecting overburn, and recommend doing so. If you don't want to lock the FPS, you can change the setting in **Assets -> XR -> Settings -> PXR_Settings.**
 
 ### Controls
@@ -110,7 +110,46 @@ Modes
 - Particle system: orange smoke
 - VFX graph: purple smoke
   - Notice that the default VFX graph renderer block is not compatible with Multiview. We overcame this by using a custom shader graph for particle rendering. To adjust the effect yourself, you will need to enable shader graph for VFX graph.
-GPU load will change when switching between modes, and it will likely cause some frame drops. It should be running at full frame rate once stabilized.
+
+Note that GPU load will change when switching between modes, and it will likely cause some frame drops. It should be running at full frame rate once stabilized.
+
+### 2.3. MR Sample Scene - Relic
+The Relic scene is a showcase scene that evaluates the performance of an MR scene with the real-world environment displayed in the passthrough. It features various graphics enhancement features, a spatial prop system using spatial anchors, and performance evaluation and debugging tools. 
+
+https://github.com/user-attachments/assets/0c92cbba-98b3-43f5-b6bc-abe1d350bcaa
+
+### Controls
+- Toggle UI Menu: A/X or Menu Button
+- Interact with UI: Trigger
+- Place spatial props: Trigger
+- Delete spatial props: B/Y
+- Cancel selected spatial props: Grip
+
+### UI Menu
+#### Settings
+Graphics
+It is expected to see noticeable visual changes when each of the settings is toggled.
+
+LOD Level
+The relic items in the demo scene have already been configured with 3 levels of LOD.You can test the LOD changes by moving the observation position in the space. Alternatively, you can click a button to change the LOD levels of all items at once.
+
+#### Props
+You can follow the guidance on the Props menu to freely create spatial anchor objects in MR for performance testing.
+![image](https://github.com/user-attachments/assets/1da915dc-1f45-4dfc-90ea-c5f622d8a479)
+
+
+### Spatial Prop Settings
+The demo scenario provides three basic spatial object models. You can also import your own scenarios or models for performance testing through the following configurations.
+You can find the setting file under "Demo Sample Scenes/RelicMRSampleScene/Settings"
+
+![image](https://github.com/user-attachments/assets/50286ada-e595-4643-849b-f562c876cf27)
+
+#### MR Asset Settings Guide
+Main Test Prefab : It will be created after the scene is calibrated and entered.It will attempt to be created on the calibrated object labeled "Table". If there is no object of this type, it will be attempted to be created directly in front of you. If his value is NULL, no object will be created.
+
+Id2Prefab : Here are examples of three objects. You can also try to configure your own models in this table. Later, you'll be able to find them in the "Props" menu of the scene, create them freely in space, and conduct performance tests.
+The object should attempt the "XR Simple Interactable" and "Collider" scripts for UI Selecting. 
+
 
 ## 3. Automated Test
 The scene can be run automatically with a pre-configured command sequence (see Command Queue below), and a performance report showing the test results will be generated. 
